@@ -1,2 +1,0 @@
-# oxela
-Feat. FirebaseExtended Team
