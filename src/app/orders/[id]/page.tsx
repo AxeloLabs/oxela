@@ -1,5 +1,5 @@
 import OrderSummary from '@/components/sections/order-summary'
-import { getOrderById } from '../../../../0-orig--dataconnect-generated/js/default-connector'
+import { getOrderById } from '../../../../dataconnect-generated/js/default-connector'
 import { dc } from '@/lib/data-connect'
 
 export default async function OrderSummaryPage({ params }: { params: Promise<{ id: string }> }) {
