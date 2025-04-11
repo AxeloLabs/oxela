@@ -246,6 +246,83 @@ input Collection_FirstRow {
   where: Collection_Filter
 }
 """
+✨ Generated having input type for table 'Collection'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Collection_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Collection_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Collection_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Collection_Having!]
+  """
+  ✨ Generated from Field `Collection`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`featuredImageId_count` of type `Int!`
+  """
+  featuredImageId_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`handle_count` of type `Int!`
+  """
+  handle_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`page_count` of type `Int!`
+  """
+  page_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`seoId_count` of type `Int!`
+  """
+  seoId_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Collection`.`createdAt_min` of type `Date`
+  """
+  createdAt_min: Date_Filter
+  """
+  ✨ Generated from Field `Collection`.`updatedAt_min` of type `Date`
+  """
+  updatedAt_min: Date_Filter
+  """
+  ✨ Generated from Field `Collection`.`createdAt_max` of type `Date`
+  """
+  createdAt_max: Date_Filter
+  """
+  ✨ Generated from Field `Collection`.`updatedAt_max` of type `Date`
+  """
+  updatedAt_max: Date_Filter
+}
+"""
 ✨ Generated key input type for table 'Collection'. It represents the primary key fields used to uniquely identify a row in the table.
 """
 input Collection_Key {
@@ -336,6 +413,10 @@ input Customer_Data {
   ✨ Generated from Field `Customer`.`acceptsMarketing` of type `Boolean!`
   """
   acceptsMarketing: Boolean
+  """
+  ✨ `_expr` server value variant of `acceptsMarketing` (✨ Generated from Field `Customer`.`acceptsMarketing` of type `Boolean!`)
+  """
+  acceptsMarketing_expr: Boolean_Expr
   """
   ✨ Generated from Field `Customer`.`email` of type `String!`
   """
@@ -434,6 +515,55 @@ input Customer_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: Customer_Filter
+}
+"""
+✨ Generated having input type for table 'Customer'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Customer_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Customer_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Customer_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Customer_Having!]
+  """
+  ✨ Generated from Field `Customer`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Customer`.`acceptsMarketing_count` of type `Int!`
+  """
+  acceptsMarketing_count: Int_Filter
+  """
+  ✨ Generated from Field `Customer`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `Customer`.`firstName_count` of type `Int!`
+  """
+  firstName_count: Int_Filter
+  """
+  ✨ Generated from Field `Customer`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Customer`.`lastName_count` of type `Int!`
+  """
+  lastName_count: Int_Filter
+  """
+  ✨ Generated from Field `Customer`.`phone_count` of type `Int!`
+  """
+  phone_count: Int_Filter
 }
 """
 ✨ Generated key input type for table 'Customer'. It represents the primary key fields used to uniquely identify a row in the table.
@@ -571,17 +701,49 @@ input Order_Data {
   """
   subtotalPrice: Float
   """
+  ✨ `_expr` server value variant of `subtotalPrice` (✨ Generated from Field `Order`.`subtotalPrice` of type `Float!`)
+  """
+  subtotalPrice_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `subtotalPrice` (✨ Generated from Field `Order`.`subtotalPrice` of type `Float!`)
+  """
+  subtotalPrice_update: [Float_Update!]
+  """
   ✨ Generated from Field `Order`.`totalPrice` of type `Float!`
   """
   totalPrice: Float
+  """
+  ✨ `_expr` server value variant of `totalPrice` (✨ Generated from Field `Order`.`totalPrice` of type `Float!`)
+  """
+  totalPrice_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `totalPrice` (✨ Generated from Field `Order`.`totalPrice` of type `Float!`)
+  """
+  totalPrice_update: [Float_Update!]
   """
   ✨ Generated from Field `Order`.`totalShippingPrice` of type `Float!`
   """
   totalShippingPrice: Float
   """
+  ✨ `_expr` server value variant of `totalShippingPrice` (✨ Generated from Field `Order`.`totalShippingPrice` of type `Float!`)
+  """
+  totalShippingPrice_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `totalShippingPrice` (✨ Generated from Field `Order`.`totalShippingPrice` of type `Float!`)
+  """
+  totalShippingPrice_update: [Float_Update!]
+  """
   ✨ Generated from Field `Order`.`totalTax` of type `Float!`
   """
   totalTax: Float
+  """
+  ✨ `_expr` server value variant of `totalTax` (✨ Generated from Field `Order`.`totalTax` of type `Float!`)
+  """
+  totalTax_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `totalTax` (✨ Generated from Field `Order`.`totalTax` of type `Float!`)
+  """
+  totalTax_update: [Float_Update!]
 }
 """
 ✨ Generated filter input type for table 'Order'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -668,6 +830,151 @@ input Order_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: Order_Filter
+}
+"""
+✨ Generated having input type for table 'Order'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Order_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Order_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Order_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Order_Having!]
+  """
+  ✨ Generated from Field `Order`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`chargeId_count` of type `Int!`
+  """
+  chargeId_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`customerId_count` of type `Int!`
+  """
+  customerId_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`financialStatus_count` of type `Int!`
+  """
+  financialStatus_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`fulfillmentStatus_count` of type `Int!`
+  """
+  fulfillmentStatus_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`paymentIntentId_count` of type `Int!`
+  """
+  paymentIntentId_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`processedAt_count` of type `Int!`
+  """
+  processedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`receiptUrl_count` of type `Int!`
+  """
+  receiptUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`subtotalPrice_count` of type `Int!`
+  """
+  subtotalPrice_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`totalPrice_count` of type `Int!`
+  """
+  totalPrice_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`totalShippingPrice_count` of type `Int!`
+  """
+  totalShippingPrice_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`totalTax_count` of type `Int!`
+  """
+  totalTax_count: Int_Filter
+  """
+  ✨ Generated from Field `Order`.`subtotalPrice_sum` of type `Float`
+  """
+  subtotalPrice_sum: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalPrice_sum` of type `Float`
+  """
+  totalPrice_sum: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalShippingPrice_sum` of type `Float`
+  """
+  totalShippingPrice_sum: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalTax_sum` of type `Float`
+  """
+  totalTax_sum: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`subtotalPrice_avg` of type `Float`
+  """
+  subtotalPrice_avg: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalPrice_avg` of type `Float`
+  """
+  totalPrice_avg: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalShippingPrice_avg` of type `Float`
+  """
+  totalShippingPrice_avg: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalTax_avg` of type `Float`
+  """
+  totalTax_avg: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`processedAt_min` of type `Date`
+  """
+  processedAt_min: Date_Filter
+  """
+  ✨ Generated from Field `Order`.`subtotalPrice_min` of type `Float`
+  """
+  subtotalPrice_min: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalPrice_min` of type `Float`
+  """
+  totalPrice_min: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalShippingPrice_min` of type `Float`
+  """
+  totalShippingPrice_min: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalTax_min` of type `Float`
+  """
+  totalTax_min: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`processedAt_max` of type `Date`
+  """
+  processedAt_max: Date_Filter
+  """
+  ✨ Generated from Field `Order`.`subtotalPrice_max` of type `Float`
+  """
+  subtotalPrice_max: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalPrice_max` of type `Float`
+  """
+  totalPrice_max: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalShippingPrice_max` of type `Float`
+  """
+  totalShippingPrice_max: Float_Filter
+  """
+  ✨ Generated from Field `Order`.`totalTax_max` of type `Float`
+  """
+  totalTax_max: Float_Filter
 }
 """
 ✨ Generated key input type for table 'Order'. It represents the primary key fields used to uniquely identify a row in the table.
@@ -793,6 +1100,14 @@ input OrderItem_Data {
   """
   price: Float
   """
+  ✨ `_expr` server value variant of `price` (✨ Generated from Field `OrderItem`.`price` of type `Float!`)
+  """
+  price_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `price` (✨ Generated from Field `OrderItem`.`price` of type `Float!`)
+  """
+  price_update: [Float_Update!]
+  """
   ✨ Generated from Field `OrderItem`.`quantity` of type `Int!`
   """
   quantity: Int
@@ -800,6 +1115,10 @@ input OrderItem_Data {
   ✨ `_expr` server value variant of `quantity` (✨ Generated from Field `OrderItem`.`quantity` of type `Int!`)
   """
   quantity_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `quantity` (✨ Generated from Field `OrderItem`.`quantity` of type `Int!`)
+  """
+  quantity_update: [Int_Update!]
 }
 """
 ✨ Generated filter input type for table 'OrderItem'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -858,6 +1177,83 @@ input OrderItem_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: OrderItem_Filter
+}
+"""
+✨ Generated having input type for table 'OrderItem'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input OrderItem_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [OrderItem_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: OrderItem_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [OrderItem_Having!]
+  """
+  ✨ Generated from Field `OrderItem`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`orderId_count` of type `Int!`
+  """
+  orderId_count: Int_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`price_count` of type `Int!`
+  """
+  price_count: Int_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`productId_count` of type `Int!`
+  """
+  productId_count: Int_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`quantity_count` of type `Int!`
+  """
+  quantity_count: Int_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`price_sum` of type `Float`
+  """
+  price_sum: Float_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`quantity_sum` of type `Int`
+  """
+  quantity_sum: Int_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`price_avg` of type `Float`
+  """
+  price_avg: Float_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`quantity_avg` of type `Float`
+  """
+  quantity_avg: Float_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`price_min` of type `Float`
+  """
+  price_min: Float_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`quantity_min` of type `Int`
+  """
+  quantity_min: Int_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`price_max` of type `Float`
+  """
+  price_max: Float_Filter
+  """
+  ✨ Generated from Field `OrderItem`.`quantity_max` of type `Int`
+  """
+  quantity_max: Int_Filter
 }
 """
 ✨ Generated key input type for table 'OrderItem'. It represents the primary key fields used to uniquely identify a row in the table.
@@ -958,6 +1354,10 @@ input Product_Data {
   ✨ Generated from Field `Product`.`availableForSale` of type `Boolean!`
   """
   availableForSale: Boolean
+  """
+  ✨ `_expr` server value variant of `availableForSale` (✨ Generated from Field `Product`.`availableForSale` of type `Boolean!`)
+  """
+  availableForSale_expr: Boolean_Expr
   """
   ✨ Generated from Field `Product`.`createdAt` of type `Date!`
   """
@@ -1150,6 +1550,95 @@ input Product_FirstRow {
   where: Product_Filter
 }
 """
+✨ Generated having input type for table 'Product'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Product_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Product_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Product_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Product_Having!]
+  """
+  ✨ Generated from Field `Product`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`availableForSale_count` of type `Int!`
+  """
+  availableForSale_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`descriptionEmbedding_count` of type `Int!`
+  """
+  descriptionEmbedding_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`featuredImageId_count` of type `Int!`
+  """
+  featuredImageId_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`handle_count` of type `Int!`
+  """
+  handle_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`productType_count` of type `Int!`
+  """
+  productType_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`seoId_count` of type `Int!`
+  """
+  seoId_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`titleEmbedding_count` of type `Int!`
+  """
+  titleEmbedding_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`updatedAt_count` of type `Int!`
+  """
+  updatedAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Product`.`createdAt_min` of type `Date`
+  """
+  createdAt_min: Date_Filter
+  """
+  ✨ Generated from Field `Product`.`updatedAt_min` of type `Date`
+  """
+  updatedAt_min: Date_Filter
+  """
+  ✨ Generated from Field `Product`.`createdAt_max` of type `Date`
+  """
+  createdAt_max: Date_Filter
+  """
+  ✨ Generated from Field `Product`.`updatedAt_max` of type `Date`
+  """
+  updatedAt_max: Date_Filter
+}
+"""
 ✨ Generated key input type for table 'Product'. It represents the primary key fields used to uniquely identify a row in the table.
 """
 input Product_Key {
@@ -1272,6 +1761,10 @@ input ProductCollection_Data {
   ✨ `_expr` server value variant of `displayPosition` (✨ Generated from Field `ProductCollection`.`displayPosition` of type `Int!`)
   """
   displayPosition_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `displayPosition` (✨ Generated from Field `ProductCollection`.`displayPosition` of type `Int!`)
+  """
+  displayPosition_update: [Int_Update!]
 }
 """
 ✨ Generated filter input type for table 'ProductCollection'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -1322,6 +1815,59 @@ input ProductCollection_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: ProductCollection_Filter
+}
+"""
+✨ Generated having input type for table 'ProductCollection'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input ProductCollection_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [ProductCollection_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: ProductCollection_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [ProductCollection_Having!]
+  """
+  ✨ Generated from Field `ProductCollection`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `ProductCollection`.`collectionId_count` of type `Int!`
+  """
+  collectionId_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductCollection`.`displayPosition_count` of type `Int!`
+  """
+  displayPosition_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductCollection`.`productId_count` of type `Int!`
+  """
+  productId_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductCollection`.`displayPosition_sum` of type `Int`
+  """
+  displayPosition_sum: Int_Filter
+  """
+  ✨ Generated from Field `ProductCollection`.`displayPosition_avg` of type `Float`
+  """
+  displayPosition_avg: Float_Filter
+  """
+  ✨ Generated from Field `ProductCollection`.`displayPosition_min` of type `Int`
+  """
+  displayPosition_min: Int_Filter
+  """
+  ✨ Generated from Field `ProductCollection`.`displayPosition_max` of type `Int`
+  """
+  displayPosition_max: Int_Filter
 }
 """
 ✨ Generated key input type for table 'ProductCollection'. It represents the primary key fields used to uniquely identify a row in the table.
@@ -1423,9 +1969,17 @@ input ProductImage_Data {
   """
   displayPosition_expr: Int_Expr
   """
+  ✨ `_update` server value variant of `displayPosition` (✨ Generated from Field `ProductImage`.`displayPosition` of type `Int!`)
+  """
+  displayPosition_update: [Int_Update!]
+  """
   ✨ Generated from Field `ProductImage`.`featured` of type `Boolean!`
   """
   featured: Boolean
+  """
+  ✨ `_expr` server value variant of `featured` (✨ Generated from Field `ProductImage`.`featured` of type `Boolean!`)
+  """
+  featured_expr: Boolean_Expr
   """
   ✨ Generated from Field `ProductImage`.`height` of type `Int!`
   """
@@ -1434,6 +1988,10 @@ input ProductImage_Data {
   ✨ `_expr` server value variant of `height` (✨ Generated from Field `ProductImage`.`height` of type `Int!`)
   """
   height_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `height` (✨ Generated from Field `ProductImage`.`height` of type `Int!`)
+  """
+  height_update: [Int_Update!]
   """
   ✨ Generated from Field `ProductImage`.`url` of type `String!`
   """
@@ -1450,6 +2008,10 @@ input ProductImage_Data {
   ✨ `_expr` server value variant of `width` (✨ Generated from Field `ProductImage`.`width` of type `Int!`)
   """
   width_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `width` (✨ Generated from Field `ProductImage`.`width` of type `Int!`)
+  """
+  width_update: [Int_Update!]
 }
 """
 ✨ Generated filter input type for table 'ProductImage'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -1524,6 +2086,111 @@ input ProductImage_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: ProductImage_Filter
+}
+"""
+✨ Generated having input type for table 'ProductImage'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input ProductImage_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [ProductImage_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: ProductImage_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [ProductImage_Having!]
+  """
+  ✨ Generated from Field `ProductImage`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`altText_count` of type `Int!`
+  """
+  altText_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`displayPosition_count` of type `Int!`
+  """
+  displayPosition_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`featured_count` of type `Int!`
+  """
+  featured_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`height_count` of type `Int!`
+  """
+  height_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`productId_count` of type `Int!`
+  """
+  productId_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`url_count` of type `Int!`
+  """
+  url_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`width_count` of type `Int!`
+  """
+  width_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`displayPosition_sum` of type `Int`
+  """
+  displayPosition_sum: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`height_sum` of type `Int`
+  """
+  height_sum: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`width_sum` of type `Int`
+  """
+  width_sum: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`displayPosition_avg` of type `Float`
+  """
+  displayPosition_avg: Float_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`height_avg` of type `Float`
+  """
+  height_avg: Float_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`width_avg` of type `Float`
+  """
+  width_avg: Float_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`displayPosition_min` of type `Int`
+  """
+  displayPosition_min: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`height_min` of type `Int`
+  """
+  height_min: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`width_min` of type `Int`
+  """
+  width_min: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`displayPosition_max` of type `Int`
+  """
+  displayPosition_max: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`height_max` of type `Int`
+  """
+  height_max: Int_Filter
+  """
+  ✨ Generated from Field `ProductImage`.`width_max` of type `Int`
+  """
+  width_max: Int_Filter
 }
 """
 ✨ Generated key input type for table 'ProductImage'. It represents the primary key fields used to uniquely identify a row in the table.
@@ -1628,6 +2295,10 @@ input ProductOption_Data {
   ✨ Generated from Field `ProductOption`.`values` of type `[String]`
   """
   values: [String!]
+  """
+  ✨ `_update` server value variant of `values` (✨ Generated from Field `ProductOption`.`values` of type `[String]`)
+  """
+  values_update: [String_ListUpdate!]
 }
 """
 ✨ Generated filter input type for table 'ProductOption'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -1678,6 +2349,43 @@ input ProductOption_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: ProductOption_Filter
+}
+"""
+✨ Generated having input type for table 'ProductOption'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input ProductOption_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [ProductOption_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: ProductOption_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [ProductOption_Having!]
+  """
+  ✨ Generated from Field `ProductOption`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `ProductOption`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductOption`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductOption`.`productId_count` of type `Int!`
+  """
+  productId_count: Int_Filter
 }
 """
 ✨ Generated key input type for table 'ProductOption'. It represents the primary key fields used to uniquely identify a row in the table.
@@ -1798,6 +2506,10 @@ input ProductReview_Data {
   ✨ `_expr` server value variant of `rating` (✨ Generated from Field `ProductReview`.`rating` of type `Int!`)
   """
   rating_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `rating` (✨ Generated from Field `ProductReview`.`rating` of type `Int!`)
+  """
+  rating_update: [Int_Update!]
 }
 """
 ✨ Generated filter input type for table 'ProductReview'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
@@ -1864,6 +2576,83 @@ input ProductReview_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: ProductReview_Filter
+}
+"""
+✨ Generated having input type for table 'ProductReview'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input ProductReview_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [ProductReview_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: ProductReview_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [ProductReview_Having!]
+  """
+  ✨ Generated from Field `ProductReview`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`contentEmbedding_count` of type `Int!`
+  """
+  contentEmbedding_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`content_count` of type `Int!`
+  """
+  content_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`customerId_count` of type `Int!`
+  """
+  customerId_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`date_count` of type `Int!`
+  """
+  date_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`productId_count` of type `Int!`
+  """
+  productId_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`rating_count` of type `Int!`
+  """
+  rating_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`rating_sum` of type `Int`
+  """
+  rating_sum: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`rating_avg` of type `Float`
+  """
+  rating_avg: Float_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`date_min` of type `Date`
+  """
+  date_min: Date_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`rating_min` of type `Int`
+  """
+  rating_min: Int_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`date_max` of type `Date`
+  """
+  date_max: Date_Filter
+  """
+  ✨ Generated from Field `ProductReview`.`rating_max` of type `Int`
+  """
+  rating_max: Int_Filter
 }
 """
 ✨ Generated key input type for table 'ProductReview'. It represents the primary key fields used to uniquely identify a row in the table.
@@ -1969,6 +2758,10 @@ input ProductVariant_Data {
   """
   availableForSale: Boolean
   """
+  ✨ `_expr` server value variant of `availableForSale` (✨ Generated from Field `ProductVariant`.`availableForSale` of type `Boolean!`)
+  """
+  availableForSale_expr: Boolean_Expr
+  """
   ✨ Generated from Field `ProductVariant`.`inventoryQuantity` of type `Int!`
   """
   inventoryQuantity: Int
@@ -1977,9 +2770,21 @@ input ProductVariant_Data {
   """
   inventoryQuantity_expr: Int_Expr
   """
+  ✨ `_update` server value variant of `inventoryQuantity` (✨ Generated from Field `ProductVariant`.`inventoryQuantity` of type `Int!`)
+  """
+  inventoryQuantity_update: [Int_Update!]
+  """
   ✨ Generated from Field `ProductVariant`.`price` of type `Float!`
   """
   price: Float
+  """
+  ✨ `_expr` server value variant of `price` (✨ Generated from Field `ProductVariant`.`price` of type `Float!`)
+  """
+  price_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `price` (✨ Generated from Field `ProductVariant`.`price` of type `Float!`)
+  """
+  price_update: [Float_Update!]
   """
   ✨ Generated from Field `ProductVariant`.`sku` of type `String`
   """
@@ -2062,6 +2867,91 @@ input ProductVariant_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: ProductVariant_Filter
+}
+"""
+✨ Generated having input type for table 'ProductVariant'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input ProductVariant_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [ProductVariant_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: ProductVariant_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [ProductVariant_Having!]
+  """
+  ✨ Generated from Field `ProductVariant`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`availableForSale_count` of type `Int!`
+  """
+  availableForSale_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`inventoryQuantity_count` of type `Int!`
+  """
+  inventoryQuantity_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`price_count` of type `Int!`
+  """
+  price_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`productId_count` of type `Int!`
+  """
+  productId_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`sku_count` of type `Int!`
+  """
+  sku_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`inventoryQuantity_sum` of type `Int`
+  """
+  inventoryQuantity_sum: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`price_sum` of type `Float`
+  """
+  price_sum: Float_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`inventoryQuantity_avg` of type `Float`
+  """
+  inventoryQuantity_avg: Float_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`price_avg` of type `Float`
+  """
+  price_avg: Float_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`inventoryQuantity_min` of type `Int`
+  """
+  inventoryQuantity_min: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`price_min` of type `Float`
+  """
+  price_min: Float_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`inventoryQuantity_max` of type `Int`
+  """
+  inventoryQuantity_max: Int_Filter
+  """
+  ✨ Generated from Field `ProductVariant`.`price_max` of type `Float`
+  """
+  price_max: Float_Filter
 }
 """
 ✨ Generated key input type for table 'ProductVariant'. It represents the primary key fields used to uniquely identify a row in the table.
@@ -2218,6 +3108,47 @@ input SEO_FirstRow {
   where: SEO_Filter
 }
 """
+✨ Generated having input type for table 'SEO'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input SEO_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [SEO_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: SEO_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [SEO_Having!]
+  """
+  ✨ Generated from Field `SEO`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `SEO`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `SEO`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `SEO`.`keywords_count` of type `Int!`
+  """
+  keywords_count: Int_Filter
+  """
+  ✨ Generated from Field `SEO`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+}
+"""
 ✨ Generated key input type for table 'SEO'. It represents the primary key fields used to uniquely identify a row in the table.
 """
 input SEO_Key {
@@ -2354,6 +3285,47 @@ input SelectedOption_FirstRow {
   Filters rows based on the specified conditions.
   """
   where: SelectedOption_Filter
+}
+"""
+✨ Generated having input type for table 'SelectedOption'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input SelectedOption_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [SelectedOption_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: SelectedOption_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [SelectedOption_Having!]
+  """
+  ✨ Generated from Field `SelectedOption`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `SelectedOption`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `SelectedOption`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `SelectedOption`.`productVariantId_count` of type `Int!`
+  """
+  productVariantId_count: Int_Filter
+  """
+  ✨ Generated from Field `SelectedOption`.`value_count` of type `Int!`
+  """
+  value_count: Int_Filter
 }
 """
 ✨ Generated key input type for table 'SelectedOption'. It represents the primary key fields used to uniquely identify a row in the table.

@@ -2,8 +2,8 @@ import { queryRef, executeQuery, mutationRef, executeMutation, validateArgs } fr
 
 export const connectorConfig = {
   connector: 'default',
-  service: 'firebase-ecommerce',
-  location: 'us-central1'
+  service: 'oxela-dataconnect-service',
+  location: 'southamerica-east1'
 };
 
 export function upsertCustomerRef(dcOrVars, vars) {
@@ -154,16 +154,6 @@ export function getOrdersByCustomerIdRef(dcOrVars, vars) {
 
 export function getOrdersByCustomerId(dcOrVars, vars) {
   return executeQuery(getOrdersByCustomerIdRef(dcOrVars, vars));
-}
-
-export function getCurrentCustomerOrdersRef(dc) {
-  const { dc: dcInstance} = validateArgs(connectorConfig, dc, undefined);
-  dcInstance._useGeneratedSdk();
-  return queryRef(dcInstance, 'GetCurrentCustomerOrders');
-}
-
-export function getCurrentCustomerOrders(dc) {
-  return executeQuery(getCurrentCustomerOrdersRef(dc));
 }
 
 export function getOrderByIdRef(dcOrVars, vars) {

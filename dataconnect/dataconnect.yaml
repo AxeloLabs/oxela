@@ -1,12 +1,12 @@
-specVersion: "v1beta"
-serviceId: "firebase-ecommerce"
-location: "us-central1"
+specVersion: "v1"
+serviceId: "oxela-dataconnect-service"
+location: "southamerica-east1"
 schema:
   source: "./schema"
   datasource:
     postgresql:
-      database: "firebase-ecommerce"
+      database: "oxela-dataconnect-database"
       cloudSql:
-        instanceId: "firebase-ecommerce"
+        instanceId: "oxela-dataconnect-instance"
       # schemaValidation: "COMPATIBLE"
 connectorDirs: ["./connector"]

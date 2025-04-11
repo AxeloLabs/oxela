@@ -1,6 +1,6 @@
 extend type Mutation {
   """
-  ✨ Insert a single `Collection` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `Collection` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   collection_insert(
     """
@@ -9,7 +9,7 @@ extend type Mutation {
     data: Collection_Data!
   ): Collection_KeyOutput! @fdc_generated(from: "Collection", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `Customer` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `Customer` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   customer_insert(
     """
@@ -18,7 +18,7 @@ extend type Mutation {
     data: Customer_Data!
   ): Customer_KeyOutput! @fdc_generated(from: "Customer", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `Order` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `Order` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   order_insert(
     """
@@ -27,7 +27,7 @@ extend type Mutation {
     data: Order_Data!
   ): Order_KeyOutput! @fdc_generated(from: "Order", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `OrderItem` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `OrderItem` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   orderItem_insert(
     """
@@ -36,7 +36,7 @@ extend type Mutation {
     data: OrderItem_Data!
   ): OrderItem_KeyOutput! @fdc_generated(from: "OrderItem", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `Product` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `Product` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   product_insert(
     """
@@ -45,7 +45,7 @@ extend type Mutation {
     data: Product_Data!
   ): Product_KeyOutput! @fdc_generated(from: "Product", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `ProductCollection` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `ProductCollection` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productCollection_insert(
     """
@@ -54,7 +54,7 @@ extend type Mutation {
     data: ProductCollection_Data!
   ): ProductCollection_KeyOutput! @fdc_generated(from: "ProductCollection", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `ProductImage` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `ProductImage` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productImage_insert(
     """
@@ -63,7 +63,7 @@ extend type Mutation {
     data: ProductImage_Data!
   ): ProductImage_KeyOutput! @fdc_generated(from: "ProductImage", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `ProductOption` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `ProductOption` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productOption_insert(
     """
@@ -72,7 +72,7 @@ extend type Mutation {
     data: ProductOption_Data!
   ): ProductOption_KeyOutput! @fdc_generated(from: "ProductOption", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `ProductReview` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `ProductReview` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productReview_insert(
     """
@@ -81,7 +81,7 @@ extend type Mutation {
     data: ProductReview_Data!
   ): ProductReview_KeyOutput! @fdc_generated(from: "ProductReview", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `ProductVariant` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `ProductVariant` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productVariant_insert(
     """
@@ -90,7 +90,7 @@ extend type Mutation {
     data: ProductVariant_Data!
   ): ProductVariant_KeyOutput! @fdc_generated(from: "ProductVariant", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `SEO` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `SEO` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   sEO_insert(
     """
@@ -99,7 +99,7 @@ extend type Mutation {
     data: SEO_Data!
   ): SEO_KeyOutput! @fdc_generated(from: "SEO", purpose: INSERT_SINGLE)
   """
-  ✨ Insert a single `SelectedOption` into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert a single `SelectedOption` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   selectedOption_insert(
     """
@@ -108,7 +108,7 @@ extend type Mutation {
     data: SelectedOption_Data!
   ): SelectedOption_KeyOutput! @fdc_generated(from: "SelectedOption", purpose: INSERT_SINGLE)
   """
-  ✨ Insert `Collection` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `Collection` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   collection_insertMany(
     """
@@ -117,7 +117,7 @@ extend type Mutation {
     data: [Collection_Data!]!
   ): [Collection_KeyOutput!]! @fdc_generated(from: "Collection", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `Customer` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `Customer` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   customer_insertMany(
     """
@@ -126,7 +126,7 @@ extend type Mutation {
     data: [Customer_Data!]!
   ): [Customer_KeyOutput!]! @fdc_generated(from: "Customer", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `Order` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `Order` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   order_insertMany(
     """
@@ -135,7 +135,7 @@ extend type Mutation {
     data: [Order_Data!]!
   ): [Order_KeyOutput!]! @fdc_generated(from: "Order", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `OrderItem` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `OrderItem` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   orderItem_insertMany(
     """
@@ -144,7 +144,7 @@ extend type Mutation {
     data: [OrderItem_Data!]!
   ): [OrderItem_KeyOutput!]! @fdc_generated(from: "OrderItem", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `Product` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `Product` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   product_insertMany(
     """
@@ -153,7 +153,7 @@ extend type Mutation {
     data: [Product_Data!]!
   ): [Product_KeyOutput!]! @fdc_generated(from: "Product", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `ProductCollection` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `ProductCollection` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productCollection_insertMany(
     """
@@ -162,7 +162,7 @@ extend type Mutation {
     data: [ProductCollection_Data!]!
   ): [ProductCollection_KeyOutput!]! @fdc_generated(from: "ProductCollection", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `ProductImage` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `ProductImage` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productImage_insertMany(
     """
@@ -171,7 +171,7 @@ extend type Mutation {
     data: [ProductImage_Data!]!
   ): [ProductImage_KeyOutput!]! @fdc_generated(from: "ProductImage", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `ProductOption` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `ProductOption` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productOption_insertMany(
     """
@@ -180,7 +180,7 @@ extend type Mutation {
     data: [ProductOption_Data!]!
   ): [ProductOption_KeyOutput!]! @fdc_generated(from: "ProductOption", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `ProductReview` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `ProductReview` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productReview_insertMany(
     """
@@ -189,7 +189,7 @@ extend type Mutation {
     data: [ProductReview_Data!]!
   ): [ProductReview_KeyOutput!]! @fdc_generated(from: "ProductReview", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `ProductVariant` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `ProductVariant` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   productVariant_insertMany(
     """
@@ -198,7 +198,7 @@ extend type Mutation {
     data: [ProductVariant_Data!]!
   ): [ProductVariant_KeyOutput!]! @fdc_generated(from: "ProductVariant", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `SEO` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `SEO` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   sEO_insertMany(
     """
@@ -207,7 +207,7 @@ extend type Mutation {
     data: [SEO_Data!]!
   ): [SEO_KeyOutput!]! @fdc_generated(from: "SEO", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert `SelectedOption` objects into the table. Columns not specified in `data` will receive defaults (e.g. `null`).
+  ✨ Insert `SelectedOption` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
   """
   selectedOption_insertMany(
     """
@@ -216,7 +216,7 @@ extend type Mutation {
     data: [SelectedOption_Data!]!
   ): [SelectedOption_KeyOutput!]! @fdc_generated(from: "SelectedOption", purpose: INSERT_MULTIPLE)
   """
-  ✨ Insert or update a single `Collection` into the table, based on the primary key. Returns the key of the newly inserted `Collection`.
+  ✨ Insert or update a single `Collection` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Collection`.
   """
   collection_upsert(
     """
@@ -225,7 +225,7 @@ extend type Mutation {
     data: Collection_Data!
   ): Collection_KeyOutput! @fdc_generated(from: "Collection", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `Customer` into the table, based on the primary key. Returns the key of the newly inserted `Customer`.
+  ✨ Insert or update a single `Customer` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Customer`.
   """
   customer_upsert(
     """
@@ -234,7 +234,7 @@ extend type Mutation {
     data: Customer_Data!
   ): Customer_KeyOutput! @fdc_generated(from: "Customer", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `Order` into the table, based on the primary key. Returns the key of the newly inserted `Order`.
+  ✨ Insert or update a single `Order` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Order`.
   """
   order_upsert(
     """
@@ -243,7 +243,7 @@ extend type Mutation {
     data: Order_Data!
   ): Order_KeyOutput! @fdc_generated(from: "Order", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `OrderItem` into the table, based on the primary key. Returns the key of the newly inserted `OrderItem`.
+  ✨ Insert or update a single `OrderItem` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `OrderItem`.
   """
   orderItem_upsert(
     """
@@ -252,7 +252,7 @@ extend type Mutation {
     data: OrderItem_Data!
   ): OrderItem_KeyOutput! @fdc_generated(from: "OrderItem", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `Product` into the table, based on the primary key. Returns the key of the newly inserted `Product`.
+  ✨ Insert or update a single `Product` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Product`.
   """
   product_upsert(
     """
@@ -261,7 +261,7 @@ extend type Mutation {
     data: Product_Data!
   ): Product_KeyOutput! @fdc_generated(from: "Product", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `ProductCollection` into the table, based on the primary key. Returns the key of the newly inserted `ProductCollection`.
+  ✨ Insert or update a single `ProductCollection` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductCollection`.
   """
   productCollection_upsert(
     """
@@ -270,7 +270,7 @@ extend type Mutation {
     data: ProductCollection_Data!
   ): ProductCollection_KeyOutput! @fdc_generated(from: "ProductCollection", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `ProductImage` into the table, based on the primary key. Returns the key of the newly inserted `ProductImage`.
+  ✨ Insert or update a single `ProductImage` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductImage`.
   """
   productImage_upsert(
     """
@@ -279,7 +279,7 @@ extend type Mutation {
     data: ProductImage_Data!
   ): ProductImage_KeyOutput! @fdc_generated(from: "ProductImage", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `ProductOption` into the table, based on the primary key. Returns the key of the newly inserted `ProductOption`.
+  ✨ Insert or update a single `ProductOption` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductOption`.
   """
   productOption_upsert(
     """
@@ -288,7 +288,7 @@ extend type Mutation {
     data: ProductOption_Data!
   ): ProductOption_KeyOutput! @fdc_generated(from: "ProductOption", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `ProductReview` into the table, based on the primary key. Returns the key of the newly inserted `ProductReview`.
+  ✨ Insert or update a single `ProductReview` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductReview`.
   """
   productReview_upsert(
     """
@@ -297,7 +297,7 @@ extend type Mutation {
     data: ProductReview_Data!
   ): ProductReview_KeyOutput! @fdc_generated(from: "ProductReview", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `ProductVariant` into the table, based on the primary key. Returns the key of the newly inserted `ProductVariant`.
+  ✨ Insert or update a single `ProductVariant` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductVariant`.
   """
   productVariant_upsert(
     """
@@ -306,7 +306,7 @@ extend type Mutation {
     data: ProductVariant_Data!
   ): ProductVariant_KeyOutput! @fdc_generated(from: "ProductVariant", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `SEO` into the table, based on the primary key. Returns the key of the newly inserted `SEO`.
+  ✨ Insert or update a single `SEO` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SEO`.
   """
   sEO_upsert(
     """
@@ -315,7 +315,7 @@ extend type Mutation {
     data: SEO_Data!
   ): SEO_KeyOutput! @fdc_generated(from: "SEO", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update a single `SelectedOption` into the table, based on the primary key. Returns the key of the newly inserted `SelectedOption`.
+  ✨ Insert or update a single `SelectedOption` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SelectedOption`.
   """
   selectedOption_upsert(
     """
@@ -324,7 +324,7 @@ extend type Mutation {
     data: SelectedOption_Data!
   ): SelectedOption_KeyOutput! @fdc_generated(from: "SelectedOption", purpose: UPSERT_SINGLE)
   """
-  ✨ Insert or update `Collection` objects into the table, based on the primary key. Returns the key of the newly inserted `Collection`.
+  ✨ Insert or update `Collection` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Collection`.
   """
   collection_upsertMany(
     """
@@ -333,7 +333,7 @@ extend type Mutation {
     data: [Collection_Data!]!
   ): [Collection_KeyOutput!]! @fdc_generated(from: "Collection", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `Customer` objects into the table, based on the primary key. Returns the key of the newly inserted `Customer`.
+  ✨ Insert or update `Customer` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Customer`.
   """
   customer_upsertMany(
     """
@@ -342,7 +342,7 @@ extend type Mutation {
     data: [Customer_Data!]!
   ): [Customer_KeyOutput!]! @fdc_generated(from: "Customer", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `Order` objects into the table, based on the primary key. Returns the key of the newly inserted `Order`.
+  ✨ Insert or update `Order` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Order`.
   """
   order_upsertMany(
     """
@@ -351,7 +351,7 @@ extend type Mutation {
     data: [Order_Data!]!
   ): [Order_KeyOutput!]! @fdc_generated(from: "Order", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `OrderItem` objects into the table, based on the primary key. Returns the key of the newly inserted `OrderItem`.
+  ✨ Insert or update `OrderItem` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `OrderItem`.
   """
   orderItem_upsertMany(
     """
@@ -360,7 +360,7 @@ extend type Mutation {
     data: [OrderItem_Data!]!
   ): [OrderItem_KeyOutput!]! @fdc_generated(from: "OrderItem", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `Product` objects into the table, based on the primary key. Returns the key of the newly inserted `Product`.
+  ✨ Insert or update `Product` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Product`.
   """
   product_upsertMany(
     """
@@ -369,7 +369,7 @@ extend type Mutation {
     data: [Product_Data!]!
   ): [Product_KeyOutput!]! @fdc_generated(from: "Product", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `ProductCollection` objects into the table, based on the primary key. Returns the key of the newly inserted `ProductCollection`.
+  ✨ Insert or update `ProductCollection` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductCollection`.
   """
   productCollection_upsertMany(
     """
@@ -378,7 +378,7 @@ extend type Mutation {
     data: [ProductCollection_Data!]!
   ): [ProductCollection_KeyOutput!]! @fdc_generated(from: "ProductCollection", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `ProductImage` objects into the table, based on the primary key. Returns the key of the newly inserted `ProductImage`.
+  ✨ Insert or update `ProductImage` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductImage`.
   """
   productImage_upsertMany(
     """
@@ -387,7 +387,7 @@ extend type Mutation {
     data: [ProductImage_Data!]!
   ): [ProductImage_KeyOutput!]! @fdc_generated(from: "ProductImage", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `ProductOption` objects into the table, based on the primary key. Returns the key of the newly inserted `ProductOption`.
+  ✨ Insert or update `ProductOption` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductOption`.
   """
   productOption_upsertMany(
     """
@@ -396,7 +396,7 @@ extend type Mutation {
     data: [ProductOption_Data!]!
   ): [ProductOption_KeyOutput!]! @fdc_generated(from: "ProductOption", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `ProductReview` objects into the table, based on the primary key. Returns the key of the newly inserted `ProductReview`.
+  ✨ Insert or update `ProductReview` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductReview`.
   """
   productReview_upsertMany(
     """
@@ -405,7 +405,7 @@ extend type Mutation {
     data: [ProductReview_Data!]!
   ): [ProductReview_KeyOutput!]! @fdc_generated(from: "ProductReview", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `ProductVariant` objects into the table, based on the primary key. Returns the key of the newly inserted `ProductVariant`.
+  ✨ Insert or update `ProductVariant` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `ProductVariant`.
   """
   productVariant_upsertMany(
     """
@@ -414,7 +414,7 @@ extend type Mutation {
     data: [ProductVariant_Data!]!
   ): [ProductVariant_KeyOutput!]! @fdc_generated(from: "ProductVariant", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `SEO` objects into the table, based on the primary key. Returns the key of the newly inserted `SEO`.
+  ✨ Insert or update `SEO` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SEO`.
   """
   sEO_upsertMany(
     """
@@ -423,7 +423,7 @@ extend type Mutation {
     data: [SEO_Data!]!
   ): [SEO_KeyOutput!]! @fdc_generated(from: "SEO", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Insert or update `SelectedOption` objects into the table, based on the primary key. Returns the key of the newly inserted `SelectedOption`.
+  ✨ Insert or update `SelectedOption` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SelectedOption`.
   """
   selectedOption_upsertMany(
     """
@@ -432,7 +432,7 @@ extend type Mutation {
     data: [SelectedOption_Data!]!
   ): [SelectedOption_KeyOutput!]! @fdc_generated(from: "SelectedOption", purpose: UPSERT_MULTIPLE)
   """
-  ✨ Update a single `Collection` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `Collection` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Collection` or `null` if not found.
   """
   collection_update(
     """
@@ -456,7 +456,7 @@ extend type Mutation {
     data: Collection_Data!
   ): Collection_KeyOutput @fdc_generated(from: "Collection", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `Customer` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `Customer` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Customer` or `null` if not found.
   """
   customer_update(
     """
@@ -485,7 +485,7 @@ extend type Mutation {
     data: Customer_Data!
   ): Customer_KeyOutput @fdc_generated(from: "Customer", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `Order` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `Order` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Order` or `null` if not found.
   """
   order_update(
     """
@@ -509,7 +509,7 @@ extend type Mutation {
     data: Order_Data!
   ): Order_KeyOutput @fdc_generated(from: "Order", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `OrderItem` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `OrderItem` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `OrderItem` or `null` if not found.
   """
   orderItem_update(
     """
@@ -533,7 +533,7 @@ extend type Mutation {
     data: OrderItem_Data!
   ): OrderItem_KeyOutput @fdc_generated(from: "OrderItem", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `Product` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `Product` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Product` or `null` if not found.
   """
   product_update(
     """
@@ -557,7 +557,7 @@ extend type Mutation {
     data: Product_Data!
   ): Product_KeyOutput @fdc_generated(from: "Product", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `ProductCollection` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `ProductCollection` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `ProductCollection` or `null` if not found.
   """
   productCollection_update(
     """
@@ -576,7 +576,7 @@ extend type Mutation {
     data: ProductCollection_Data!
   ): ProductCollection_KeyOutput @fdc_generated(from: "ProductCollection", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `ProductImage` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `ProductImage` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `ProductImage` or `null` if not found.
   """
   productImage_update(
     """
@@ -600,7 +600,7 @@ extend type Mutation {
     data: ProductImage_Data!
   ): ProductImage_KeyOutput @fdc_generated(from: "ProductImage", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `ProductOption` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `ProductOption` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `ProductOption` or `null` if not found.
   """
   productOption_update(
     """
@@ -624,7 +624,7 @@ extend type Mutation {
     data: ProductOption_Data!
   ): ProductOption_KeyOutput @fdc_generated(from: "ProductOption", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `ProductReview` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `ProductReview` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `ProductReview` or `null` if not found.
   """
   productReview_update(
     """
@@ -643,7 +643,7 @@ extend type Mutation {
     data: ProductReview_Data!
   ): ProductReview_KeyOutput @fdc_generated(from: "ProductReview", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `ProductVariant` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `ProductVariant` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `ProductVariant` or `null` if not found.
   """
   productVariant_update(
     """
@@ -667,7 +667,7 @@ extend type Mutation {
     data: ProductVariant_Data!
   ): ProductVariant_KeyOutput @fdc_generated(from: "ProductVariant", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `SEO` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `SEO` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `SEO` or `null` if not found.
   """
   sEO_update(
     """
@@ -691,7 +691,7 @@ extend type Mutation {
     data: SEO_Data!
   ): SEO_KeyOutput @fdc_generated(from: "SEO", purpose: UPDATE_SINGLE)
   """
-  ✨ Update a single `SelectedOption` based on `id`, `key` or `first`, setting columns specified in `data`. Returns `null` if not found.
+  ✨ Update a single `SelectedOption` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `SelectedOption` or `null` if not found.
   """
   selectedOption_update(
     """

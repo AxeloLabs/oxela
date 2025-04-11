@@ -1,3 +1,15 @@
+# Axel
+
+# Users/ax/0-HOME/0--IT--mac2025/
+
+# VS/poc/oxela/
+
+lsof -i -P | grep LISTEN
+
+# allow app hosting to use secrets
+
+firebase apphosting:secrets:grantaccess FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID, GOOGLE_API_KEY, STRIPE_ACCOUNT_ID, STRIPE_SECRET_KEY, STRIPE_PUB_KEY, STRIPE_WEBHOOK_SECRET
+
 # Firebase E-Commerce Project
 
 This project is a Firebase-based e-commerce application designed for developers to bootstrap their e-commerce projects. Below is the documentation to help you set up, provision, and maintain the application.
@@ -137,27 +149,38 @@ For further support or questions, refer to the project documentation or contact 
 To run this project locally, follow these steps:
 
 1. Clone the repository:
+
    ```
    git clone https://github.com/username/firebase-ecommerce.git
    ```
+
 2. Move into the project directory:
+
    ```
    cd firebase-ecommerce
    ```
+
 3. Install dependencies:
+
    ```
    npm install
    ```
+
 4. Copy the example environment variables:
+
    ```
    cp .env.example .env.local
    ```
+
    • Fill in the required values (Firebase config, Stripe keys, Google API key, etc.).
 5. Start the development server:
+
    ```
    npm run dev
    ```
+
 6. Open the application in your browser at:
+
    ```
    http://localhost:3000
    ```
