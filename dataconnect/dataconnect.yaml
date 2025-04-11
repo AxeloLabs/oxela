@@ -1,4 +1,4 @@
-specVersion: "v1"
+specVersion: "v1beta"
 serviceId: "oxela-dataconnect-service"
 location: "southamerica-east1"
 schema:

@@ -5,7 +5,7 @@ import Arrow from '../../icons/arrow'
 import Button from '../../ui/button'
 import ProductListItem from './product-list-item'
 import { useAuth } from '@/hooks/useAuth'
-import { GetOrderByIdData } from '../../../../dataconnect-generated/js/default-connector'
+import { GetOrderByIdData } from '../../../../0-orig--dataconnect-generated/js/default-connector'
 
 type Props = {
   order?: GetOrderByIdData['order']

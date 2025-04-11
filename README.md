@@ -1,14 +1,3 @@
-# Axel
-
-# Users/ax/0-HOME/0--IT--mac2025/
-
-# VS/poc/oxela/
-
-lsof -i -P | grep LISTEN
-
-# allow app hosting to use secrets
-
-firebase apphosting:secrets:grantaccess FIREBASE_API_KEY, FIREBASE_AUTH_DOMAIN, FIREBASE_PROJECT_ID, FIREBASE_STORAGE_BUCKET, FIREBASE_MESSAGING_SENDER_ID, FIREBASE_APP_ID, GOOGLE_API_KEY, STRIPE_ACCOUNT_ID, STRIPE_SECRET_KEY, STRIPE_PUB_KEY, STRIPE_WEBHOOK_SECRET
 
 # Firebase E-Commerce Project
 
