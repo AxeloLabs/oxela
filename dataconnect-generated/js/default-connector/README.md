@@ -12,6 +12,7 @@
   - [*SearchProductTitleUsingL2Similarity*](#searchproducttitleusingl2similarity)
   - [*SearchProductReviewContentUsingL2Similarity*](#searchproductreviewcontentusingl2similarity)
   - [*GetOrdersByCustomerId*](#getordersbycustomerid)
+  - [*GetCurrentCustomerOrders*](#getcurrentcustomerorders)
   - [*GetOrderById*](#getorderbyid)
 - [**Mutations**](#mutations)
   - [*UpsertCustomer*](#upsertcustomer)
@@ -36,7 +37,7 @@ A connector is a collection of Queries and Mutations. One SDK is generated for e
 You can find more information about connectors in the [Data Connect documentation](https://firebase.google.com/docs/data-connect#how-does).
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig } from '@firebasegen/default-connector';
 
 const dataConnect = getDataConnect(connectorConfig);
@@ -49,7 +50,7 @@ To connect to the emulator, you can use the following code.
 You can also follow the emulator instructions from the [Data Connect documentation](https://firebase.google.com/docs/data-connect/web-sdk#instrument-clients).
 
 ```javascript
-import { connectDataConnectEmulator, getDataConnect } from 'firebase/data-connect';
+import { connectDataConnectEmulator, getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig } from '@firebasegen/default-connector';
 
 const dataConnect = getDataConnect(connectorConfig);
@@ -106,7 +107,7 @@ export interface ListCustomersData {
 ### Using `ListCustomers`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, listCustomers } from '@firebasegen/default-connector';
 
 
@@ -130,7 +131,7 @@ listCustomers().then((response) => {
 ### Using `ListCustomers`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, listCustomersRef } from '@firebasegen/default-connector';
 
 
@@ -200,7 +201,7 @@ export interface GetReviewsByHandleData {
 ### Using `GetReviewsByHandle`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getReviewsByHandle, GetReviewsByHandleVariables } from '@firebasegen/default-connector';
 
 // The `GetReviewsByHandle` query requires an argument of type `GetReviewsByHandleVariables`:
@@ -230,7 +231,7 @@ getReviewsByHandle(getReviewsByHandleVars).then((response) => {
 ### Using `GetReviewsByHandle`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getReviewsByHandleRef, GetReviewsByHandleVariables } from '@firebasegen/default-connector';
 
 // The `GetReviewsByHandle` query requires an argument of type `GetReviewsByHandleVariables`:
@@ -331,7 +332,7 @@ export interface GetProductByHandleData {
 ### Using `GetProductByHandle`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getProductByHandle, GetProductByHandleVariables } from '@firebasegen/default-connector';
 
 // The `GetProductByHandle` query requires an argument of type `GetProductByHandleVariables`:
@@ -361,7 +362,7 @@ getProductByHandle(getProductByHandleVars).then((response) => {
 ### Using `GetProductByHandle`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getProductByHandleRef, GetProductByHandleVariables } from '@firebasegen/default-connector';
 
 // The `GetProductByHandle` query requires an argument of type `GetProductByHandleVariables`:
@@ -469,7 +470,7 @@ export interface GetCollectionByHandleData {
 ### Using `GetCollectionByHandle`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getCollectionByHandle, GetCollectionByHandleVariables } from '@firebasegen/default-connector';
 
 // The `GetCollectionByHandle` query requires an argument of type `GetCollectionByHandleVariables`:
@@ -500,7 +501,7 @@ getCollectionByHandle(getCollectionByHandleVars).then((response) => {
 ### Using `GetCollectionByHandle`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getCollectionByHandleRef, GetCollectionByHandleVariables } from '@firebasegen/default-connector';
 
 // The `GetCollectionByHandle` query requires an argument of type `GetCollectionByHandleVariables`:
@@ -599,7 +600,7 @@ export interface GetCollectionsByPageData {
 ### Using `GetCollectionsByPage`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getCollectionsByPage, GetCollectionsByPageVariables } from '@firebasegen/default-connector';
 
 // The `GetCollectionsByPage` query has an optional argument of type `GetCollectionsByPageVariables`:
@@ -631,7 +632,7 @@ getCollectionsByPage(getCollectionsByPageVars).then((response) => {
 ### Using `GetCollectionsByPage`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getCollectionsByPageRef, GetCollectionsByPageVariables } from '@firebasegen/default-connector';
 
 // The `GetCollectionsByPage` query has an optional argument of type `GetCollectionsByPageVariables`:
@@ -701,7 +702,7 @@ export interface SearchProductDescriptionUsingL2similarityData {
 ### Using `SearchProductDescriptionUsingL2Similarity`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, searchProductDescriptionUsingL2similarity, SearchProductDescriptionUsingL2similarityVariables } from '@firebasegen/default-connector';
 
 // The `SearchProductDescriptionUsingL2Similarity` query requires an argument of type `SearchProductDescriptionUsingL2similarityVariables`:
@@ -731,7 +732,7 @@ searchProductDescriptionUsingL2similarity(searchProductDescriptionUsingL2similar
 ### Using `SearchProductDescriptionUsingL2Similarity`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, searchProductDescriptionUsingL2similarityRef, SearchProductDescriptionUsingL2similarityVariables } from '@firebasegen/default-connector';
 
 // The `SearchProductDescriptionUsingL2Similarity` query requires an argument of type `SearchProductDescriptionUsingL2similarityVariables`:
@@ -799,7 +800,7 @@ export interface SearchProductTitleUsingL2similarityData {
 ### Using `SearchProductTitleUsingL2Similarity`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, searchProductTitleUsingL2similarity, SearchProductTitleUsingL2similarityVariables } from '@firebasegen/default-connector';
 
 // The `SearchProductTitleUsingL2Similarity` query requires an argument of type `SearchProductTitleUsingL2similarityVariables`:
@@ -829,7 +830,7 @@ searchProductTitleUsingL2similarity(searchProductTitleUsingL2similarityVars).the
 ### Using `SearchProductTitleUsingL2Similarity`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, searchProductTitleUsingL2similarityRef, SearchProductTitleUsingL2similarityVariables } from '@firebasegen/default-connector';
 
 // The `SearchProductTitleUsingL2Similarity` query requires an argument of type `SearchProductTitleUsingL2similarityVariables`:
@@ -899,7 +900,7 @@ export interface SearchProductReviewContentUsingL2similarityData {
 ### Using `SearchProductReviewContentUsingL2Similarity`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, searchProductReviewContentUsingL2similarity, SearchProductReviewContentUsingL2similarityVariables } from '@firebasegen/default-connector';
 
 // The `SearchProductReviewContentUsingL2Similarity` query requires an argument of type `SearchProductReviewContentUsingL2similarityVariables`:
@@ -929,7 +930,7 @@ searchProductReviewContentUsingL2similarity(searchProductReviewContentUsingL2sim
 ### Using `SearchProductReviewContentUsingL2Similarity`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, searchProductReviewContentUsingL2similarityRef, SearchProductReviewContentUsingL2similarityVariables } from '@firebasegen/default-connector';
 
 // The `SearchProductReviewContentUsingL2Similarity` query requires an argument of type `SearchProductReviewContentUsingL2similarityVariables`:
@@ -987,42 +988,40 @@ Recall that executing the `GetOrdersByCustomerId` query returns a `QueryPromise`
 The `data` property is an object of type `GetOrdersByCustomerIdData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
 ```javascript
 export interface GetOrdersByCustomerIdData {
-  orders?: {
-    orders_on_customer: ({
+  orders: ({
+    id: UUIDString;
+    customerId: string;
+    processedAt: DateString;
+    chargeId?: string | null;
+    paymentIntentId?: string | null;
+    receiptUrl?: string | null;
+    subtotalPrice: number;
+    totalPrice: number;
+    financialStatus: string;
+    fulfillmentStatus: string;
+    orderItems_on_order: ({
       id: UUIDString;
-      customerId: string;
-      processedAt: DateString;
-      chargeId?: string | null;
-      paymentIntentId?: string | null;
-      receiptUrl?: string | null;
-      subtotalPrice: number;
-      totalPrice: number;
-      financialStatus: string;
-      fulfillmentStatus: string;
-      orderItems_on_order: ({
+      quantity: number;
+      price: number;
+      product: {
         id: UUIDString;
-        quantity: number;
-        price: number;
-        product: {
-          id: UUIDString;
-          title: string;
-          handle: string;
-          productImages_on_product: ({
-            url: string;
-            altText?: string | null;
-            width: number;
-            height: number;
-          })[];
-        } & Product_Key;
-      } & OrderItem_Key)[];
-    } & Order_Key)[];
-  };
+        title: string;
+        handle: string;
+        productImages_on_product: ({
+          url: string;
+          altText?: string | null;
+          width: number;
+          height: number;
+        })[];
+      } & Product_Key;
+    } & OrderItem_Key)[];
+  } & Order_Key)[];
 }
 ```
 ### Using `GetOrdersByCustomerId`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getOrdersByCustomerId, GetOrdersByCustomerIdVariables } from '@firebasegen/default-connector';
 
 // The `GetOrdersByCustomerId` query requires an argument of type `GetOrdersByCustomerIdVariables`:
@@ -1052,7 +1051,7 @@ getOrdersByCustomerId(getOrdersByCustomerIdVars).then((response) => {
 ### Using `GetOrdersByCustomerId`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getOrdersByCustomerIdRef, GetOrdersByCustomerIdVariables } from '@firebasegen/default-connector';
 
 // The `GetOrdersByCustomerId` query requires an argument of type `GetOrdersByCustomerIdVariables`:
@@ -1068,6 +1067,110 @@ const ref = getOrdersByCustomerIdRef({ customerId: ..., });
 // You can also pass in a `DataConnect` instance to the `QueryRef` function.
 const dataConnect = getDataConnect(connectorConfig);
 const ref = getOrdersByCustomerIdRef(dataConnect, getOrdersByCustomerIdVars);
+
+// Call `executeQuery()` on the reference to execute the query.
+// You can use the `await` keyword to wait for the promise to resolve.
+const { data } = await executeQuery(ref);
+
+console.log(data.orders);
+
+// Or, you can use the `Promise` API.
+executeQuery(ref).then((response) => {
+  const data = response.data;
+  console.log(data.orders);
+});
+```
+
+## GetCurrentCustomerOrders
+You can execute the `GetCurrentCustomerOrders` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [default-connector/index.d.ts](./index.d.ts):
+```javascript
+getCurrentCustomerOrders(): QueryPromise<GetCurrentCustomerOrdersData, undefined>;
+
+getCurrentCustomerOrdersRef(): QueryRef<GetCurrentCustomerOrdersData, undefined>;
+```
+You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
+```javascript
+getCurrentCustomerOrders(dc: DataConnect): QueryPromise<GetCurrentCustomerOrdersData, undefined>;
+
+getCurrentCustomerOrdersRef(dc: DataConnect): QueryRef<GetCurrentCustomerOrdersData, undefined>;
+```
+
+### Variables
+The `GetCurrentCustomerOrders` query has no variables.
+### Return Type
+Recall that executing the `GetCurrentCustomerOrders` query returns a `QueryPromise` that resolves to an object with a `data` property.
+
+The `data` property is an object of type `GetCurrentCustomerOrdersData`, which is defined in [default-connector/index.d.ts](./index.d.ts). It has the following fields:
+```javascript
+export interface GetCurrentCustomerOrdersData {
+  orders?: {
+    orders_on_customer: ({
+      id: UUIDString;
+      processedAt: DateString;
+      chargeId?: string | null;
+      paymentIntentId?: string | null;
+      receiptUrl?: string | null;
+      subtotalPrice: number;
+      totalPrice: number;
+      financialStatus: string;
+      fulfillmentStatus: string;
+      orderItems_on_order: ({
+        id: UUIDString;
+        quantity: number;
+        price: number;
+        product: {
+          id: UUIDString;
+          title: string;
+          handle: string;
+          productImages_on_product: ({
+            url: string;
+            altText?: string | null;
+            width: number;
+            height: number;
+          })[];
+        } & Product_Key;
+      } & OrderItem_Key)[];
+    } & Order_Key)[];
+  };
+}
+```
+### Using `GetCurrentCustomerOrders`'s action shortcut function
+
+```javascript
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
+import { connectorConfig, getCurrentCustomerOrders } from '@firebasegen/default-connector';
+
+
+// Call the `getCurrentCustomerOrders()` function to execute the query.
+// You can use the `await` keyword to wait for the promise to resolve.
+const { data } = await getCurrentCustomerOrders();
+
+// You can also pass in a `DataConnect` instance to the action shortcut function.
+const dataConnect = getDataConnect(connectorConfig);
+const { data } = await getCurrentCustomerOrders(dataConnect);
+
+console.log(data.orders);
+
+// Or, you can use the `Promise` API.
+getCurrentCustomerOrders().then((response) => {
+  const data = response.data;
+  console.log(data.orders);
+});
+```
+
+### Using `GetCurrentCustomerOrders`'s `QueryRef` function
+
+```javascript
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
+import { connectorConfig, getCurrentCustomerOrdersRef } from '@firebasegen/default-connector';
+
+
+// Call the `getCurrentCustomerOrdersRef()` function to get a reference to the query.
+const ref = getCurrentCustomerOrdersRef();
+
+// You can also pass in a `DataConnect` instance to the `QueryRef` function.
+const dataConnect = getDataConnect(connectorConfig);
+const ref = getCurrentCustomerOrdersRef(dataConnect);
 
 // Call `executeQuery()` on the reference to execute the query.
 // You can use the `await` keyword to wait for the promise to resolve.
@@ -1140,7 +1243,7 @@ export interface GetOrderByIdData {
 ### Using `GetOrderById`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, getOrderById, GetOrderByIdVariables } from '@firebasegen/default-connector';
 
 // The `GetOrderById` query requires an argument of type `GetOrderByIdVariables`:
@@ -1170,7 +1273,7 @@ getOrderById(getOrderByIdVars).then((response) => {
 ### Using `GetOrderById`'s `QueryRef` function
 
 ```javascript
-import { getDataConnect, executeQuery } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeQuery } from 'firebase/data-connect';
 import { connectorConfig, getOrderByIdRef, GetOrderByIdVariables } from '@firebasegen/default-connector';
 
 // The `GetOrderById` query requires an argument of type `GetOrderByIdVariables`:
@@ -1253,7 +1356,7 @@ export interface UpsertCustomerData {
 ### Using `UpsertCustomer`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, upsertCustomer, UpsertCustomerVariables } from '@firebasegen/default-connector';
 
 // The `UpsertCustomer` mutation requires an argument of type `UpsertCustomerVariables`:
@@ -1287,7 +1390,7 @@ upsertCustomer(upsertCustomerVars).then((response) => {
 ### Using `UpsertCustomer`'s `MutationRef` function
 
 ```javascript
-import { getDataConnect, executeMutation } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, upsertCustomerRef, UpsertCustomerVariables } from '@firebasegen/default-connector';
 
 // The `UpsertCustomer` mutation requires an argument of type `UpsertCustomerVariables`:
@@ -1357,7 +1460,7 @@ export interface CreateProductReviewData {
 ### Using `CreateProductReview`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, createProductReview, CreateProductReviewVariables } from '@firebasegen/default-connector';
 
 // The `CreateProductReview` mutation requires an argument of type `CreateProductReviewVariables`:
@@ -1389,7 +1492,7 @@ createProductReview(createProductReviewVars).then((response) => {
 ### Using `CreateProductReview`'s `MutationRef` function
 
 ```javascript
-import { getDataConnect, executeMutation } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, createProductReviewRef, CreateProductReviewVariables } from '@firebasegen/default-connector';
 
 // The `CreateProductReview` mutation requires an argument of type `CreateProductReviewVariables`:
@@ -1464,7 +1567,7 @@ export interface CreateOrderData {
 ### Using `CreateOrder`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, createOrder, CreateOrderVariables } from '@firebasegen/default-connector';
 
 // The `CreateOrder` mutation requires an argument of type `CreateOrderVariables`:
@@ -1503,7 +1606,7 @@ createOrder(createOrderVars).then((response) => {
 ### Using `CreateOrder`'s `MutationRef` function
 
 ```javascript
-import { getDataConnect, executeMutation } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, createOrderRef, CreateOrderVariables } from '@firebasegen/default-connector';
 
 // The `CreateOrder` mutation requires an argument of type `CreateOrderVariables`:
@@ -1581,7 +1684,7 @@ export interface UpdateOrderByPaymentIntentIdData {
 ### Using `UpdateOrderByPaymentIntentId`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, updateOrderByPaymentIntentId, UpdateOrderByPaymentIntentIdVariables } from '@firebasegen/default-connector';
 
 // The `UpdateOrderByPaymentIntentId` mutation requires an argument of type `UpdateOrderByPaymentIntentIdVariables`:
@@ -1616,7 +1719,7 @@ updateOrderByPaymentIntentId(updateOrderByPaymentIntentIdVars).then((response) =
 ### Using `UpdateOrderByPaymentIntentId`'s `MutationRef` function
 
 ```javascript
-import { getDataConnect, executeMutation } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, updateOrderByPaymentIntentIdRef, UpdateOrderByPaymentIntentIdVariables } from '@firebasegen/default-connector';
 
 // The `UpdateOrderByPaymentIntentId` mutation requires an argument of type `UpdateOrderByPaymentIntentIdVariables`:
@@ -1689,7 +1792,7 @@ export interface UpdateOrderByChargeIdData {
 ### Using `UpdateOrderByChargeId`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, updateOrderByChargeId, UpdateOrderByChargeIdVariables } from '@firebasegen/default-connector';
 
 // The `UpdateOrderByChargeId` mutation has an optional argument of type `UpdateOrderByChargeIdVariables`:
@@ -1725,7 +1828,7 @@ updateOrderByChargeId(updateOrderByChargeIdVars).then((response) => {
 ### Using `UpdateOrderByChargeId`'s `MutationRef` function
 
 ```javascript
-import { getDataConnect, executeMutation } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, updateOrderByChargeIdRef, UpdateOrderByChargeIdVariables } from '@firebasegen/default-connector';
 
 // The `UpdateOrderByChargeId` mutation has an optional argument of type `UpdateOrderByChargeIdVariables`:
@@ -1798,7 +1901,7 @@ export interface CreateOrderItemData {
 ### Using `CreateOrderItem`'s action shortcut function
 
 ```javascript
-import { getDataConnect } from 'firebase/data-connect';
+import { getDataConnect, DataConnect } from 'firebase/data-connect';
 import { connectorConfig, createOrderItem, CreateOrderItemVariables } from '@firebasegen/default-connector';
 
 // The `CreateOrderItem` mutation requires an argument of type `CreateOrderItemVariables`:
@@ -1831,7 +1934,7 @@ createOrderItem(createOrderItemVars).then((response) => {
 ### Using `CreateOrderItem`'s `MutationRef` function
 
 ```javascript
-import { getDataConnect, executeMutation } from 'firebase/data-connect';
+import { getDataConnect, DataConnect, executeMutation } from 'firebase/data-connect';
 import { connectorConfig, createOrderItemRef, CreateOrderItemVariables } from '@firebasegen/default-connector';
 
 // The `CreateOrderItem` mutation requires an argument of type `CreateOrderItemVariables`:

@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@firebasegen/default-connector':
         specifier: file:dataconnect-generated/js/default-connector
-        version: file:dataconnect-generated/js/default-connector(firebase@11.1.0)
+        version: file:dataconnect-generated/js/default-connector(@tanstack-query-firebase/react@2.0.0(@tanstack/react-query@5.72.2(react@19.0.0))(firebase@11.1.0))(@tanstack/react-query@5.72.2(react@19.0.0))(firebase@11.1.0)
       '@google/generative-ai':
         specifier: ^0.21.0
         version: 0.21.0
@@ -338,7 +338,9 @@ packages:
     resolution: {directory: dataconnect-generated/js/default-connector, type: directory}
     engines: {node: ' >=18.0'}
     peerDependencies:
-      firebase: ^10.14.0 || ^11.3.0
+      '@tanstack-query-firebase/react': ^1.0.5
+      '@tanstack/react-query': ^5
+      firebase: ^11.3.0
 
   '@floating-ui/core@1.6.8':
     resolution: {integrity: sha512-7XJ9cPU+yI2QeLS+FCSlqNFZJq8arvswefkZrYI1yQBbftw6FyrZOxYSh+9S7z7TpeWlRt9zJ5IhM1WIL334jA==}
@@ -678,6 +680,20 @@ packages:
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
+
+  '@tanstack-query-firebase/react@2.0.0':
+    resolution: {integrity: sha512-MBs9QFC5IjhinM9bdyibmFxHikHBinnqamxmkfxa5QFc/A/Lbn+cC+IVBmLk9zFNiOn+AYq0f+n5c+R5TX2FZA==}
+    peerDependencies:
+      '@tanstack/react-query': ^5
+      firebase: ^11.3.0
+
+  '@tanstack/query-core@5.72.2':
+    resolution: {integrity: sha512-fxl9/0yk3mD/FwTmVEf1/H6N5B975H0luT+icKyX566w6uJG0x6o+Yl+I38wJRCaogiMkstByt+seXfDbWDAcA==}
+
+  '@tanstack/react-query@5.72.2':
+    resolution: {integrity: sha512-SVNHzyBUYiis+XiCl+8yiPZmMYei2AKYY94wM/zpvB5l1jxqOo82FQTziSJ4pBi96jtYqvYrTMxWynmbQh3XKw==}
+    peerDependencies:
+      react: ^18 || ^19
 
   '@tanstack/react-virtual@3.11.1':
     resolution: {integrity: sha512-orn2QNe5tF6SqjucHJ6cKTKcRDe3GG7bcYqPNn72Yejj7noECdzgAyRfGt2pGDPemhYim3d1HIR/dgruCnLfUA==}
@@ -2836,8 +2852,10 @@ snapshots:
 
   '@firebase/webchannel-wrapper@1.0.3': {}
 
-  '@firebasegen/default-connector@file:dataconnect-generated/js/default-connector(firebase@11.1.0)':
+  '@firebasegen/default-connector@file:dataconnect-generated/js/default-connector(@tanstack-query-firebase/react@2.0.0(@tanstack/react-query@5.72.2(react@19.0.0))(firebase@11.1.0))(@tanstack/react-query@5.72.2(react@19.0.0))(firebase@11.1.0)':
     dependencies:
+      '@tanstack-query-firebase/react': 2.0.0(@tanstack/react-query@5.72.2(react@19.0.0))(firebase@11.1.0)
+      '@tanstack/react-query': 5.72.2(react@19.0.0)
       firebase: 11.1.0
 
   '@floating-ui/core@1.6.8':
@@ -3129,6 +3147,18 @@ snapshots:
   '@swc/helpers@0.5.15':
     dependencies:
       tslib: 2.8.1
+
+  '@tanstack-query-firebase/react@2.0.0(@tanstack/react-query@5.72.2(react@19.0.0))(firebase@11.1.0)':
+    dependencies:
+      '@tanstack/react-query': 5.72.2(react@19.0.0)
+      firebase: 11.1.0
+
+  '@tanstack/query-core@5.72.2': {}
+
+  '@tanstack/react-query@5.72.2(react@19.0.0)':
+    dependencies:
+      '@tanstack/query-core': 5.72.2
+      react: 19.0.0
 
   '@tanstack/react-virtual@3.11.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:

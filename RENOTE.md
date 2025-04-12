@@ -1,9 +1,17 @@
+firebase-tools@13.35.0
+
+npm uninstall -g firebase-tools
+
+pnpm add -D firebase-tools@13.10.0
+
 firebase dataconnect:sdk:generate
 firebase dataconnect:deploy
 
 echo "Firebase project: $(jq -r '.projects.default' .firebaserc)" && echo "GCloud project: $(gcloud config get-value project)"
 
 alias check-projects='echo "Firebase: $(jq -r ".projects.default" .firebaserc) | GCloud: $(gcloud config get-value project)"'
+
+# routine
 
 firebase use
 firebase projects:list

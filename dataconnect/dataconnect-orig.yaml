@@ -10,3 +10,4 @@ schema:
         instanceId: "firebase-ecommerce"
       # schemaValidation: "COMPATIBLE"
 connectorDirs: ["./connector"]
+ 

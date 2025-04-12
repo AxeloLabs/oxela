@@ -150,6 +150,38 @@ export interface GetCollectionsByPageVariables {
   page?: string | null;
 }
 
+export interface GetCurrentCustomerOrdersData {
+  orders?: {
+    orders_on_customer: ({
+      id: UUIDString;
+      processedAt: DateString;
+      chargeId?: string | null;
+      paymentIntentId?: string | null;
+      receiptUrl?: string | null;
+      subtotalPrice: number;
+      totalPrice: number;
+      financialStatus: string;
+      fulfillmentStatus: string;
+      orderItems_on_order: ({
+        id: UUIDString;
+        quantity: number;
+        price: number;
+        product: {
+          id: UUIDString;
+          title: string;
+          handle: string;
+          productImages_on_product: ({
+            url: string;
+            altText?: string | null;
+            width: number;
+            height: number;
+          })[];
+        } & Product_Key;
+      } & OrderItem_Key)[];
+    } & Order_Key)[];
+  };
+}
+
 export interface GetOrderByIdData {
   order?: {
     id: UUIDString;
@@ -183,36 +215,34 @@ export interface GetOrderByIdVariables {
 }
 
 export interface GetOrdersByCustomerIdData {
-  orders?: {
-    orders_on_customer: ({
+  orders: ({
+    id: UUIDString;
+    customerId: string;
+    processedAt: DateString;
+    chargeId?: string | null;
+    paymentIntentId?: string | null;
+    receiptUrl?: string | null;
+    subtotalPrice: number;
+    totalPrice: number;
+    financialStatus: string;
+    fulfillmentStatus: string;
+    orderItems_on_order: ({
       id: UUIDString;
-      customerId: string;
-      processedAt: DateString;
-      chargeId?: string | null;
-      paymentIntentId?: string | null;
-      receiptUrl?: string | null;
-      subtotalPrice: number;
-      totalPrice: number;
-      financialStatus: string;
-      fulfillmentStatus: string;
-      orderItems_on_order: ({
+      quantity: number;
+      price: number;
+      product: {
         id: UUIDString;
-        quantity: number;
-        price: number;
-        product: {
-          id: UUIDString;
-          title: string;
-          handle: string;
-          productImages_on_product: ({
-            url: string;
-            altText?: string | null;
-            width: number;
-            height: number;
-          })[];
-        } & Product_Key;
-      } & OrderItem_Key)[];
-    } & Order_Key)[];
-  };
+        title: string;
+        handle: string;
+        productImages_on_product: ({
+          url: string;
+          altText?: string | null;
+          width: number;
+          height: number;
+        })[];
+      } & Product_Key;
+    } & OrderItem_Key)[];
+  } & Order_Key)[];
 }
 
 export interface GetOrdersByCustomerIdVariables {
@@ -539,6 +569,14 @@ export function getOrdersByCustomerIdRef(dc: DataConnect, vars: GetOrdersByCusto
 
 export function getOrdersByCustomerId(vars: GetOrdersByCustomerIdVariables): QueryPromise<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
 export function getOrdersByCustomerId(dc: DataConnect, vars: GetOrdersByCustomerIdVariables): QueryPromise<GetOrdersByCustomerIdData, GetOrdersByCustomerIdVariables>;
+
+/* Allow users to create refs without passing in DataConnect */
+export function getCurrentCustomerOrdersRef(): QueryRef<GetCurrentCustomerOrdersData, undefined>;
+/* Allow users to pass in custom DataConnect instances */
+export function getCurrentCustomerOrdersRef(dc: DataConnect): QueryRef<GetCurrentCustomerOrdersData, undefined>;
+
+export function getCurrentCustomerOrders(): QueryPromise<GetCurrentCustomerOrdersData, undefined>;
+export function getCurrentCustomerOrders(dc: DataConnect): QueryPromise<GetCurrentCustomerOrdersData, undefined>;
 
 /* Allow users to create refs without passing in DataConnect */
 export function getOrderByIdRef(vars: GetOrderByIdVariables): QueryRef<GetOrderByIdData, GetOrderByIdVariables>;
