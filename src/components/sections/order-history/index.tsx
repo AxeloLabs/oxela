@@ -30,12 +30,18 @@ export default function OrderHistory({ orders }: Props) {
 
   const { user: customer } = useAuth()
 
-  if (!orders || orders?.length === 0) {
+
+  // if (!orders?.orders_on_customer || orders.orders_on_customer.length === 0)
+  //   const customerOrders = orders?.orders_on_customer;
+  // if (!customerOrders || customerOrders.length === 0) {
+  //   // pas de commandes pour ce client
+  // }
+  if (!orders?.orders_on_customer || orders?.orders_on_customer.length === 0) {
     return (
       <h1 className="text-4xl">
         Hello, {customer?.displayName ?? customer?.email}
         <br />
-        Total Orders: <span className="text-gray-400">{orders?.length}</span>
+        Total Orders: <span className="text-gray-400">{orders?.orders_on_customer.length}</span>
       </h1>
     )
   }
@@ -45,7 +51,7 @@ export default function OrderHistory({ orders }: Props) {
       <h1 className="text-4xl">
         Hello, {customer?.displayName ?? customer?.email}!
         <br />
-        Total Orders: <span className="text-gray-400">{orders?.length}</span>
+        Total Orders: <span className="text-gray-400">{orders?.orders_on_customer?.length}</span>
       </h1>
       <div className="w-full">
         <div className="max-lg:hidden text-gray-500 flex gap-10">
@@ -55,7 +61,7 @@ export default function OrderHistory({ orders }: Props) {
           <div className="w-full text-right">Total</div>
           <div className="w-32 shrink-0" />
         </div>
-        {orders.map((order) => (
+        {orders.orders_on_customer.map((order) => (
           <OrderListItem key={order.id} order={order} />
         ))}
       </div>

@@ -1,29 +1,3 @@
-# Axel
-
-gcloud auth login
-gcloud config set project [TON_PROJECT_ID]
-gcloud projects list
-gcloud data-connect instances list
-
-<!-- project -->
-firebase use
-firebase projects:list
-gcloud config get-value project
-gcloud projects describe oxela-dataconnect
-
-firebase dataconnect:services:list
-firebase apphosting:backends:list
-
-<!-- db -->
-firebase deploy --only dataconnect
-
-<!-- backend -->
-firebase apphosting:secrets:grantaccess FIREBASE_API_KEY,FIREBASE_AUTH_DOMAIN,FIREBASE_PROJECT_ID,FIREBASE_STORAGE_BUCKET,FIREBASE_MESSAGING_SENDER_ID,FIREBASE_APP_ID,GOOGLE_API_KEY,STRIPE_ACCOUNT_ID,STRIPE_SECRET_KEY,STRIPE_PUB_KEY,STRIPE_WEBHOOK_SECRET --project oxela-dataconnect --backend oxela-backend-id
-
-#
-
-#
-
 # Firebase E-Commerce Project
 
 This project is a Firebase-based e-commerce application designed for developers to bootstrap their e-commerce projects. Below is the documentation to help you set up, provision, and maintain the application.

@@ -3,7 +3,9 @@ import Link from 'next/link'
 import { GetOrdersByCustomerIdData } from '@firebasegen/default-connector'
 
 type Props = {
-  order: GetOrdersByCustomerIdData['orders'][number]
+  // order: GetOrdersByCustomerIdData['orders'] extends { orders_on_customer: (infer U)[] } ? U : never;
+  // order: GetOrdersByCustomerIdData['orders'][number]
+  order: NonNullable<GetOrdersByCustomerIdData['orders']>['orders_on_customer'][number];
 }
 
 export default function OrderListItem({ order }: Props) {
