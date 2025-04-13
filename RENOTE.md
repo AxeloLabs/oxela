@@ -1,4 +1,3 @@
-firebase-tools@13.35.0
 
 npm uninstall -g firebase-tools
 
