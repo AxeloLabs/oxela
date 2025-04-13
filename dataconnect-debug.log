@@ -1,0 +1,83 @@
+I0412 23:55:45.571294   29566 load.go:37] Reloading schema and connectors...
+I0412 23:55:45.773005   29566 control.go:71] [/emulator/oxela-service bf21] UpdateResources(): done
+Schema: sources: schema/schema.gql [4841B] 
+Connector "default": sources: connector/mutations.gql [3175B] connector/queries.gql [5285B] 
+I0412 23:55:45.892444   29566 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "/Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/firebase-ecommerce/dataconnect-generated/js/default-connector"
+I0412 23:55:45.924966   29566 collector.go:107] schema extensions wrote into "/Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/firebase-ecommerce/dataconnect/.dataconnect/schema"
+Generated sources: main/implicit.gql [4098B] main/input.gql [101565B] prelude.gql [67159B] main/relation.gql [64680B] main/query.gql [18777B] main/mutation.gql [42478B] 
+E0412 23:55:45.925403   29566 load.go:48] Errors flushing generated files: connector "default" javascriptSdk failed to traverse the output directory: unexpected file "pnpm-lock.yaml".
+Output Directory: /Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/firebase-ecommerce/dataconnect-generated/js/default-connector
+Expect the output directory to contain only files with suffixes: .ts .js .json .md
+Please double check the output directory specified in connector.yaml!
+I0412 23:55:45.925606   29566 load.go:115] Finished reloading
+I0412 23:55:45.931143   29566 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I0412 23:55:45.932388   29566 dev.go:95] Listening on address (HTTP + gRPC): [::1]:9399
+I0412 23:55:48.662551   29566 migrate.go:24] Running migration SQL:
+Step 1: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+Step 2: CREATE EXTENSION IF NOT EXISTS "vector"
+Step 3: CREATE TABLE "public"."collection" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "featured_image_id" uuid NULL, "seo_id" uuid NULL, "created_at" date NOT NULL, "description" text NULL, "handle" character varying(100) NOT NULL, "name" character varying(100) NOT NULL, "page" character varying(100) NULL, "updated_at" date NOT NULL, PRIMARY KEY ("id"))
+Step 4: CREATE INDEX "collection_featuredImageId_idx" ON "public"."collection" ("featured_image_id")
+Step 5: CREATE INDEX "collection_seoId_idx" ON "public"."collection" ("seo_id")
+Step 6: CREATE UNIQUE INDEX "collection_handle_uidx" ON "public"."collection" ("handle")
+Step 7: CREATE TABLE "public"."customer" ("customer_auth" text NOT NULL, "accepts_marketing" boolean NOT NULL, "email" character varying(50) NOT NULL, "first_name" character varying(50) NOT NULL, "last_name" character varying(50) NOT NULL, "phone" character varying(50) NOT NULL, PRIMARY KEY ("customer_auth"))
+Step 8: CREATE TABLE "public"."order" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "customer_id" text NOT NULL, "charge_id" character varying(100) NULL, "financial_status" character varying(50) NOT NULL, "fulfillment_status" character varying(50) NOT NULL, "payment_intent_id" character varying(100) NULL, "processed_at" timestamp NOT NULL, "receipt_url" character varying(255) NULL, "subtotal_price" double precision NOT NULL, "total_price" double precision NOT NULL, "total_shipping_price" double precision NOT NULL, "total_tax" double precision NOT NULL, PRIMARY KEY ("id"))
+Step 9: CREATE INDEX "order_customerId_idx" ON "public"."order" ("customer_id")
+Step 10: CREATE TABLE "public"."order_item" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "order_id" uuid NOT NULL, "product_id" uuid NOT NULL, "price" double precision NOT NULL, "quantity" integer NOT NULL, PRIMARY KEY ("id"))
+Step 11: CREATE INDEX "order_item_orderId_idx" ON "public"."order_item" ("order_id")
+Step 12: CREATE INDEX "order_item_productId_idx" ON "public"."order_item" ("product_id")
+Step 13: CREATE TABLE "public"."product" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "featured_image_id" uuid NULL, "seo_id" uuid NULL, "available_for_sale" boolean NOT NULL, "created_at" date NOT NULL, "description" text NULL, "description_embedding" vector(768) NOT NULL, "handle" character varying(100) NOT NULL, "product_type" character varying(100) NULL, "title" character varying(100) NOT NULL, "title_embedding" vector(768) NOT NULL, "updated_at" date NOT NULL, PRIMARY KEY ("id"))
+Step 14: CREATE INDEX "product_featuredImageId_idx" ON "public"."product" ("featured_image_id")
+Step 15: CREATE INDEX "product_seoId_idx" ON "public"."product" ("seo_id")
+Step 16: CREATE UNIQUE INDEX "product_handle_uidx" ON "public"."product" ("handle")
+Step 17: CREATE TABLE "public"."product_collection_products" ("collection_id" uuid NOT NULL, "product_id" uuid NOT NULL, "display_position" integer NOT NULL, PRIMARY KEY ("collection_id", "product_id"))
+Step 18: CREATE INDEX "product_collection_products_collectionId_idx" ON "public"."product_collection_products" ("collection_id")
+Step 19: CREATE INDEX "product_collection_products_productId_idx" ON "public"."product_collection_products" ("product_id")
+Step 20: CREATE TABLE "public"."product_image" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "product_id" uuid NOT NULL, "alt_text" text NULL, "display_position" integer NOT NULL, "featured" boolean NOT NULL, "height" integer NOT NULL, "url" text NOT NULL, "width" integer NOT NULL, PRIMARY KEY ("id"))
+Step 21: CREATE INDEX "product_image_productId_idx" ON "public"."product_image" ("product_id")
+Step 22: CREATE TABLE "public"."product_option" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "product_id" uuid NOT NULL, "name" character varying(50) NOT NULL, "values" text[] NULL, PRIMARY KEY ("id"))
+Step 23: CREATE INDEX "product_option_productId_idx" ON "public"."product_option" ("product_id")
+Step 24: CREATE TABLE "public"."product_reviews" ("product_id" uuid NOT NULL, "customer_id" text NOT NULL, "content" text NOT NULL, "content_embedding" vector(768) NOT NULL, "date" date NOT NULL, "id" uuid NOT NULL DEFAULT uuid_generate_v4(), "rating" integer NOT NULL, PRIMARY KEY ("product_id", "customer_id"))
+Step 25: CREATE INDEX "product_reviews_customerId_idx" ON "public"."product_reviews" ("customer_id")
+Step 26: CREATE INDEX "product_reviews_productId_idx" ON "public"."product_reviews" ("product_id")
+Step 27: CREATE TABLE "public"."product_variant" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "product_id" uuid NOT NULL, "available_for_sale" boolean NOT NULL, "inventory_quantity" integer NOT NULL, "price" numeric(10,2) NOT NULL, "sku" character varying(50) NULL, "title" character varying(100) NOT NULL, PRIMARY KEY ("id"))
+Step 28: CREATE INDEX "product_variant_productId_idx" ON "public"."product_variant" ("product_id")
+Step 29: CREATE TABLE "public"."s_e_o" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "description" text NOT NULL, "keywords" text NOT NULL, "title" text NOT NULL, PRIMARY KEY ("id"))
+Step 30: CREATE TABLE "public"."selected_option" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "product_variant_id" uuid NOT NULL, "name" character varying(50) NULL, "value" character varying(50) NULL, PRIMARY KEY ("id"))
+Step 31: CREATE INDEX "selected_option_productVariantId_idx" ON "public"."selected_option" ("product_variant_id")
+Step 32: ALTER TABLE "public"."collection" ADD CONSTRAINT "collection_featured_image_id_fkey" FOREIGN KEY ("featured_image_id") REFERENCES "public"."product_image" ("id") ON DELETE SET NULL, ADD CONSTRAINT "collection_seo_id_fkey" FOREIGN KEY ("seo_id") REFERENCES "public"."s_e_o" ("id") ON DELETE SET NULL
+Step 33: ALTER TABLE "public"."order" ADD CONSTRAINT "order_customer_id_fkey" FOREIGN KEY ("customer_id") REFERENCES "public"."customer" ("customer_auth") ON DELETE CASCADE
+Step 34: ALTER TABLE "public"."order_item" ADD CONSTRAINT "order_item_order_id_fkey" FOREIGN KEY ("order_id") REFERENCES "public"."order" ("id") ON DELETE CASCADE, ADD CONSTRAINT "order_item_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "public"."product" ("id") ON DELETE CASCADE
+Step 35: ALTER TABLE "public"."product" ADD CONSTRAINT "product_featured_image_id_fkey" FOREIGN KEY ("featured_image_id") REFERENCES "public"."product_image" ("id") ON DELETE SET NULL, ADD CONSTRAINT "product_seo_id_fkey" FOREIGN KEY ("seo_id") REFERENCES "public"."s_e_o" ("id") ON DELETE SET NULL
+Step 36: ALTER TABLE "public"."product_collection_products" ADD CONSTRAINT "product_collection_products_collection_id_fkey" FOREIGN KEY ("collection_id") REFERENCES "public"."collection" ("id") ON DELETE CASCADE, ADD CONSTRAINT "product_collection_products_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "public"."product" ("id") ON DELETE CASCADE
+Step 37: ALTER TABLE "public"."product_image" ADD CONSTRAINT "product_image_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "public"."product" ("id") ON DELETE CASCADE
+Step 38: ALTER TABLE "public"."product_option" ADD CONSTRAINT "product_option_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "public"."product" ("id") ON DELETE CASCADE
+Step 39: ALTER TABLE "public"."product_reviews" ADD CONSTRAINT "product_reviews_customer_id_fkey" FOREIGN KEY ("customer_id") REFERENCES "public"."customer" ("customer_auth") ON DELETE CASCADE, ADD CONSTRAINT "product_reviews_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "public"."product" ("id") ON DELETE CASCADE
+Step 40: ALTER TABLE "public"."product_variant" ADD CONSTRAINT "product_variant_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "public"."product" ("id") ON DELETE CASCADE
+Step 41: ALTER TABLE "public"."selected_option" ADD CONSTRAINT "selected_option_product_variant_id_fkey" FOREIGN KEY ("product_variant_id") REFERENCES "public"."product_variant" ("id") ON DELETE CASCADE
+I0412 23:55:48.904701   29566 control.go:71] [/emulator/oxela-service 5e4d] UpdateResources(): done
+Schema: sources: schema/schema.gql [4841B] 
+Connector "default": sources: connector/mutations.gql [3175B] connector/queries.gql [5285B] 
+I0412 23:55:57.512211   29566 prepare.go:115] [operation "CreateProductSEOs" attempt 1] preparePlan succeeded
+I0412 23:55:57.512319   29566 prepare.go:106] [operation "CreateProductSEOs" attempt 1] DBStats beforePrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterPrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
+I0412 23:55:57.518209   29566 executor.go:97] [operation "CreateProductSEOs" attempt 1] DBStats beforeRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
+I0412 23:55:57.518634   29566 engine.go:170] [/emulator/oxela-service 5e4d] ExecuteGraphql CreateProductSEOs: succeeded. 
+I0412 23:56:01.985943   29566 prepare.go:115] [operation "CreateProducts" attempt 1] preparePlan succeeded
+I0412 23:56:01.985973   29566 prepare.go:106] [operation "CreateProducts" attempt 1] DBStats beforePrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterPrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
+I0412 23:56:04.346834   29566 executor.go:97] [operation "CreateProducts" attempt 1] DBStats beforeRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
+W0412 23:56:04.347657   29566 engine.go:174] [/emulator/oxela-service 5e4d] ExecuteGraphql CreateProducts: failed. 
+Auth: admin
+Errors: input: product_insertMany unable to resolve SQL param $0: predict request to https://us-central1-aiplatform.googleapis.com/v1/projects/oxela-dataconnect/locations/us-central1/publishers/google/models/textembedding-gecko@003:predict for &{Instances:[{Content:Drawing from the warm orange blazer paired with a complementary ivory outfit.}]} failed with http status code 400
+Response: {
+  "error": {
+    "code": 400,
+    "message": "Project `268533009789` is not allowed to use Publisher Model `projects/oxela-dataconnect/locations/us-central1/publishers/google/models/textembedding-gecko@003`",
+    "status": "FAILED_PRECONDITION"
+  }
+}
+
+
+Data:
+{
+   "product_insertMany": null
+ }
+sources: input [20504B] 
