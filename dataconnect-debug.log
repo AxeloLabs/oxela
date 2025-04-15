@@ -1,18 +1,18 @@
-I0412 23:55:45.571294   29566 load.go:37] Reloading schema and connectors...
-I0412 23:55:45.773005   29566 control.go:71] [/emulator/oxela-service bf21] UpdateResources(): done
+I0414 22:05:19.946482   49182 load.go:37] Reloading schema and connectors...
+I0414 22:05:20.183731   49182 control.go:71] [/emulator/oxela-service 4655] UpdateResources(): done
 Schema: sources: schema/schema.gql [4841B] 
-Connector "default": sources: connector/mutations.gql [3175B] connector/queries.gql [5285B] 
-I0412 23:55:45.892444   29566 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "/Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/firebase-ecommerce/dataconnect-generated/js/default-connector"
-I0412 23:55:45.924966   29566 collector.go:107] schema extensions wrote into "/Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/firebase-ecommerce/dataconnect/.dataconnect/schema"
-Generated sources: main/implicit.gql [4098B] main/input.gql [101565B] prelude.gql [67159B] main/relation.gql [64680B] main/query.gql [18777B] main/mutation.gql [42478B] 
-E0412 23:55:45.925403   29566 load.go:48] Errors flushing generated files: connector "default" javascriptSdk failed to traverse the output directory: unexpected file "pnpm-lock.yaml".
-Output Directory: /Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/firebase-ecommerce/dataconnect-generated/js/default-connector
+Connector "default": sources: connector/queries.gql [5285B] connector/mutations.gql [3175B] 
+I0414 22:05:20.319632   49182 codegen.go:82] [connector "default" javascriptSdk] Generating sources into "/Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/oxela-1/dataconnect-generated/js/default-connector"
+I0414 22:05:20.349060   49182 collector.go:107] schema extensions wrote into "/Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/oxela-1/dataconnect/.dataconnect/schema"
+Generated sources: main/implicit.gql [4098B] main/input.gql [101565B] main/relation.gql [64680B] main/query.gql [18777B] main/mutation.gql [42478B] prelude.gql [67159B] 
+E0414 22:05:20.349477   49182 load.go:48] Errors flushing generated files: connector "default" javascriptSdk failed to traverse the output directory: unexpected file "pnpm-lock.yaml".
+Output Directory: /Users/ax/0-HOME/0--IT--mac2025/VS/2--poc/oxela-1/dataconnect-generated/js/default-connector
 Expect the output directory to contain only files with suffixes: .ts .js .json .md
 Please double check the output directory specified in connector.yaml!
-I0412 23:55:45.925606   29566 load.go:115] Finished reloading
-I0412 23:55:45.931143   29566 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:9399
-I0412 23:55:45.932388   29566 dev.go:95] Listening on address (HTTP + gRPC): [::1]:9399
-I0412 23:55:48.662551   29566 migrate.go:24] Running migration SQL:
+I0414 22:05:20.349667   49182 load.go:115] Finished reloading
+I0414 22:05:20.355650   49182 dev.go:95] Listening on address (HTTP + gRPC): 127.0.0.1:9399
+I0414 22:05:20.357482   49182 dev.go:95] Listening on address (HTTP + gRPC): [::1]:9399
+I0414 22:05:23.889214   49182 migrate.go:24] Running migration SQL:
 Step 1: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
 Step 2: CREATE EXTENSION IF NOT EXISTS "vector"
 Step 3: CREATE TABLE "public"."collection" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "featured_image_id" uuid NULL, "seo_id" uuid NULL, "created_at" date NOT NULL, "description" text NULL, "handle" character varying(100) NOT NULL, "name" character varying(100) NOT NULL, "page" character varying(100) NULL, "updated_at" date NOT NULL, PRIMARY KEY ("id"))
@@ -54,23 +54,19 @@ Step 38: ALTER TABLE "public"."product_option" ADD CONSTRAINT "product_option_pr
 Step 39: ALTER TABLE "public"."product_reviews" ADD CONSTRAINT "product_reviews_customer_id_fkey" FOREIGN KEY ("customer_id") REFERENCES "public"."customer" ("customer_auth") ON DELETE CASCADE, ADD CONSTRAINT "product_reviews_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "public"."product" ("id") ON DELETE CASCADE
 Step 40: ALTER TABLE "public"."product_variant" ADD CONSTRAINT "product_variant_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "public"."product" ("id") ON DELETE CASCADE
 Step 41: ALTER TABLE "public"."selected_option" ADD CONSTRAINT "selected_option_product_variant_id_fkey" FOREIGN KEY ("product_variant_id") REFERENCES "public"."product_variant" ("id") ON DELETE CASCADE
-I0412 23:55:48.904701   29566 control.go:71] [/emulator/oxela-service 5e4d] UpdateResources(): done
+I0414 22:05:24.740970   49182 control.go:71] [/emulator/oxela-service a266] UpdateResources(): done
 Schema: sources: schema/schema.gql [4841B] 
 Connector "default": sources: connector/mutations.gql [3175B] connector/queries.gql [5285B] 
-I0412 23:55:57.512211   29566 prepare.go:115] [operation "CreateProductSEOs" attempt 1] preparePlan succeeded
-I0412 23:55:57.512319   29566 prepare.go:106] [operation "CreateProductSEOs" attempt 1] DBStats beforePrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterPrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
-I0412 23:55:57.518209   29566 executor.go:97] [operation "CreateProductSEOs" attempt 1] DBStats beforeRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
-I0412 23:55:57.518634   29566 engine.go:170] [/emulator/oxela-service 5e4d] ExecuteGraphql CreateProductSEOs: succeeded. 
-I0412 23:56:01.985943   29566 prepare.go:115] [operation "CreateProducts" attempt 1] preparePlan succeeded
-I0412 23:56:01.985973   29566 prepare.go:106] [operation "CreateProducts" attempt 1] DBStats beforePrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterPrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
-I0412 23:56:04.346834   29566 executor.go:97] [operation "CreateProducts" attempt 1] DBStats beforeRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
-W0412 23:56:04.347657   29566 engine.go:174] [/emulator/oxela-service 5e4d] ExecuteGraphql CreateProducts: failed. 
+I0414 22:08:46.257587   49182 prepare.go:115] [operation "CreateProduct" attempt 1] preparePlan succeeded
+I0414 22:08:46.258656   49182 prepare.go:106] [operation "CreateProduct" attempt 1] DBStats beforePrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterPrepare: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
+I0414 22:08:48.807583   49182 executor.go:97] [operation "CreateProduct" attempt 1] DBStats beforeRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}, afterRun: sql.DBStats{MaxOpenConnections:1, OpenConnections:1, InUse:0, Idle:1, WaitCount:0, WaitDuration:0, MaxIdleClosed:0, MaxIdleTimeClosed:0, MaxLifetimeClosed:0}
+W0414 22:08:48.809925   49182 engine.go:174] [/emulator/oxela-service a266] ExecuteGraphql CreateProduct: failed. 
 Auth: admin
-Errors: input: product_insertMany unable to resolve SQL param $0: predict request to https://us-central1-aiplatform.googleapis.com/v1/projects/oxela-dataconnect/locations/us-central1/publishers/google/models/textembedding-gecko@003:predict for &{Instances:[{Content:Drawing from the warm orange blazer paired with a complementary ivory outfit.}]} failed with http status code 400
+Errors: input: product_insert unable to resolve SQL param $0: predict request to https://us-central1-aiplatform.googleapis.com/v1/projects/oxela-dataconnect/locations/us-central1/publishers/google/models/textembedding-gecko@latest:predict for &{Instances:[{Content:Drawing from}]} failed with http status code 400
 Response: {
   "error": {
     "code": 400,
-    "message": "Project `268533009789` is not allowed to use Publisher Model `projects/oxela-dataconnect/locations/us-central1/publishers/google/models/textembedding-gecko@003`",
+    "message": "Project `268533009789` is not allowed to use Publisher Model `projects/oxela-dataconnect/locations/us-central1/publishers/google/models/textembedding-gecko@latest`",
     "status": "FAILED_PRECONDITION"
   }
 }
@@ -78,6 +74,6 @@ Response: {
 
 Data:
 {
-   "product_insertMany": null
+   "product_insert": null
  }
-sources: input [20504B] 
+sources: input [21868B] 

@@ -1,0 +1,9 @@
+{
+    "instances": [
+        {
+            "task_type": "RETRIEVAL_DOCUMENT",
+            "title": "document title",
+            "content": "I would like embeddings for this text!"
+        }
+    ]
+}
